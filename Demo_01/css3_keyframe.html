@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>逐格</title>
+        <style type="text/css">
+        * { margin: 0; padding: 0; border: 0; } 
+	        html,body{
+	        	margin: 0;
+				background:#000;
+				color: #fff;
+				letter-spacing:2px;
+				font-family: Constantia, "Lucida Bright", "DejaVu Serif", "微軟正黑體", "serif";
+				text-align:center;
+	        }
+			a{
+				opacity:0.5;
+				color: yellow;border:1px solid yellow;padding:5px;text-decoration: none;
+
+			}
+			a:hover{
+				opacity:0.9;
+				transition: 0.8s;
+
+			}
+			#title{
+				width:350px;
+				height:300px;
+				display:block;
+				margin:100px;
+				left:100px;
+				top:100px;
+				overflow:hidden;
+				background-image:url(titleani.png);
+				background-repeat: no-repeat;
+				background-position:0px bottom;
+				cursor:pointer;
+				border:1px solid #fff;
+				line-height:1em;
+			}
+			
+			#title:hover{
+				-webkit-animation: titleAction  1.5s steps(21) infinite;
+				-moz-animation: titleAction  1.5s steps(21) infinite;
+				-ms-animation: titleAction  1.5s steps(21) infinite;
+				animation: titleAction  1.5s steps(21) infinite;	
+			}
+			 @keyframes titleAction {
+				 from { background-position:  0px bottom; }
+     			 to { background-position:-7245px bottom; }
+			}
+			
+			.textBox{
+				width:800px;
+				position: relative;
+				margin-left: 100px;
+				padding-bottom:100px;
+			}
+        </style>
+    </head>
+    <body>
+       	<div id="title">
+       		<p>【拆解:利用keyframes寫逐格動畫】<br> <br>看完請認養，請至ATM把財產轉到我戶頭 <br> <br>(喵嗚) 把滑鼠放在覺醒上面就會掃光</p>
+       	</div>
+       	<div class="textBox" style="text-align:left;">
+   			1.首先在做圖片的時候，把每個影格的圖片做成一長條 <br><br><img src="titleani.png" width="600" height="auto" alt=""/><br>
+			<br>
+     		2.<br><br>
+			@keyframes titleAction {<br><br>
+				　from { background-position:  0px bottom; }
+    			 <span style="color:yellow">//原理是變換背景位置</span>
+    			 <br><br>
+     			　to { background-position:-7245px bottom; }<br><br>
+			}<br><br>
+     		
+     		3.<br><br>
+     		#title:hover{<br><br>
+			　animation: titleAction  1.5s steps(21) infinite;<br><br>
+				<span style="color:yellow">　//step(影格數)；infinite：無限播放</span>	<br><br>
+			}<br><br>
+      	相關連結:　<a href="http://www.astralweb.com.tw/frame-by-frame-animation/">如何使用CSS製作逐格動畫</a>　
+      	<a href="https://segmentfault.com/a/1190000004917617">利用step讓網頁實現逐格動畫</a>　
+      	<a href="https://www.openfoundry.org/tw/tech-column/9233-css3-animation">css3動畫基礎</a>
+      	</div>
+       	
+</body>
+</html>
